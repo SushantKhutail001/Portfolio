@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sushant Khutail | Portfolio</title>
+<style>
+:root{--bg:#f5f6fa;--card:#fff;--ink:#151a2b;--mute:#5b6378;--line:#dde1ec;--accent:#3347ff;--accent2:#00a884}
+[data-theme="dark"]{--bg:#0e1220;--card:#171d31;--ink:#eef1fb;--mute:#9aa3bd;--line:#273050;--accent:#7b8bff;--accent2:#34d3a8}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:1.9rem;margin-bottom:28px;letter-spacing:-.01em}
+nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;text-decoration:none;font-size:1.1rem}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:22px;align-items:center;list-style:none;padding:0}
+.links a{text-decoration:none;color:var(--mute);font-size:.95rem}
+.links a:hover,.links a.active{color:var(--accent)}
+button{font:inherit;cursor:pointer}
+.icon-btn{background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 10px}
+#menuBtn{display:none}
+.hero{padding:110px 0 90px}
+.hero h1{font-size:clamp(2.4rem,7vw,4.4rem);line-height:1.08;letter-spacing:-.03em;max-width:12em}
+.hero .role{color:var(--accent);font-weight:700;margin:18px 0 10px;font-size:1.15rem;min-height:1.7em}
+.hero p{color:var(--mute);max-width:34em}
+.btns{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:10px;border:2px solid var(--accent);text-decoration:none;font-weight:600;background:var(--accent);color:#fff}
+.btn.ghost{background:none;color:var(--ink);border-color:var(--line)}
+.grid{display:grid;gap:20px}
+.about{grid-template-columns:1.4fr 1fr}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.facts{list-style:none;padding:0}
+.facts li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+.facts li:last-child{border:0}
+.facts b{color:var(--mute);font-weight:600}
+.timeline{border-left:3px solid var(--accent);padding-left:24px;display:grid;gap:24px}
+.timeline small{color:var(--accent2);font-weight:700}
+.timeline h3{font-size:1.1rem}
+.timeline p{color:var(--mute)}
+.skills{grid-template-columns:1fr 1fr}
+.bar{margin-bottom:14px}
+.bar div:first-child{display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:5px}
+.track{height:8px;border-radius:8px;background:var(--line);overflow:hidden}
+.fill{height:100%;width:0;background:var(--accent);border-radius:8px;transition:width 1s}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{padding:6px 14px;border:1px solid var(--line);border-radius:99px;background:var(--card);font-size:.92rem}
+.projects{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.proj h3{margin-bottom:6px}
+.proj p{color:var(--mute);margin-bottom:14px;font-size:.95rem}
+.proj .tags span{font-size:.8rem;padding:3px 10px}
+.proj a{display:inline-block;margin-top:14px;color:var(--accent);font-weight:600}
+form{display:grid;gap:14px;max-width:560px}
+label{font-weight:600;font-size:.92rem}
+input,textarea{width:100%;font:inherit;padding:11px 13px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);margin-top:5px}
+input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.err{color:#d6336c;font-size:.85rem;min-height:1.1em;display:block}
+#ok{display:none;color:var(--accent2);font-weight:700}
+footer{border-top:1px solid var(--line);padding:24px 0;text-align:center;color:var(--mute);font-size:.9rem}
+@media(max-width:760px){
+ #menuBtn{display:block}
+ .links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:16px 20px;border-bottom:1px solid var(--line);align-items:flex-start}
+ .links.open{display:flex}
+ .about,.skills{grid-template-columns:1fr}
+ section{padding:52px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fill{transition:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+ <a class="logo" href="#home">Sushant<span>Khutail</span></a>
+ <ul class="links" id="links">
+  <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#education">Education</a></li>
+  <li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+  <li><button class="icon-btn" id="theme" aria-label="Toggle dark mode">🌙</button></li>
+ </ul>
+ <button class="icon-btn" id="menuBtn" aria-label="Open menu">☰</button>
+</div></nav>
+
+<header id="home" class="hero"><div class="wrap">
+ <h1>Hi, I'm Sushant Khutail.</h1>
+ <div class="role" id="role"></div>
+ <p>I build clean, responsive websites with HTML, CSS and JavaScript. I'm currently studying and looking for projects where I can learn and ship real work.</p>
+ <div class="btns"><a class="btn" href="#projects">View projects</a><a class="btn ghost" href="#contact">Contact me</a></div>
+</div></header>
+
+<section id="about"><div class="wrap">
+ <h2>About me</h2>
+ <div class="grid about">
+  <div><p>I'm a student who enjoys turning ideas into working websites. I like clear layouts, readable code and learning by building. Replace this paragraph with a few sentences about your interests, goals and what you want to do after graduating.</p></div>
+  <div class="card"><ul class="facts">
+   <li><b>Name</b><span>Sushant Khutail</span></li><li><b>Location</b><span>Ghaziabad, India</span></li>
+   <li><b>Degree</b><span>B.Tech, Computer Science</span></li><li><b>Email</b><span>2630btech1535@kiet.edu</span></li>
+  </ul></div>
+ </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+ <h2>Education</h2>
+ <div class="timeline">
+  <div><small>2026 – Present</small><h3>B.Tech, Computer Science</h3><p>KIET, Ghaziabad. Currently pursuing.</p></div>
+  <div><small>Completed 2026</small><h3>Senior Secondary (Class XII)</h3><p>Your School. Stream and percentage.</p></div>
+  <div><small>Completed 2023</small><h3>Secondary (Class X)</h3><p>Your School. Percentage.</p></div>
+ </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <h2>Skills</h2>
+ <div class="grid skills">
+  <div class="card"><h3 style="margin-bottom:16px">Technical</h3>
+   <div class="bar"><div><span>HTML</span><span>90%</span></div><div class="track"><div class="fill" data-w="90"></div></div></div>
+   <div class="bar"><div><span>CSS</span><span>85%</span></div><div class="track"><div class="fill" data-w="85"></div></div></div>
+   <div class="bar"><div><span>JavaScript</span><span>75%</span></div><div class="track"><div class="fill" data-w="75"></div></div></div>
+   <div class="bar"><div><span>Git &amp; GitHub</span><span>65%</span></div><div class="track"><div class="fill" data-w="65"></div></div></div>
+  </div>
+  <div class="card"><h3 style="margin-bottom:16px">Non-technical</h3>
+   <div class="tags"><span>Communication</span><span>Teamwork</span><span>Problem solving</span><span>Time management</span><span>Adaptability</span><span>Presenting</span></div>
+  </div>
+ </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+ <h2>Projects</h2>
+ <div class="grid projects">
+  <article class="card proj"><h3>Task Manager</h3><p>Add, edit, filter and complete tasks. Saves to the browser with localStorage.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div><a href="#">View project</a></article>
+  <article class="card proj"><h3>Weather Dashboard</h3><p>Search a city and see temperature, humidity and wind speed.</p><div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div><a href="#">View project</a></article>
+  <article class="card proj"><h3>Class Website</h3><p>A responsive site for a college club with an events page.</p><div class="tags"><span>HTML</span><span>CSS</span></div><a href="#">View project</a></article>
+ </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+ <h2>Contact</h2>
+ <form id="form" novalidate>
+  <div><label for="n">Name</label><input id="n" autocomplete="name"><span class="err"></span></div>
+  <div><label for="e">Email</label><input id="e" type="email" autocomplete="email"><span class="err"></span></div>
+  <div><label for="m">Message</label><textarea id="m" rows="5"></textarea><span class="err"></span></div>
+  <button class="btn" type="submit">Send message</button>
+  <p id="ok" role="status">Thanks! Your message was sent.</p>
+ </form>
+</div></section>
+
+<footer>© <span id="yr"></span> Sushant Khutail. Built with HTML, CSS and JavaScript.</footer>
+
+<script>
+// 1. Dark / light mode (remembered)
+const root=document.documentElement,themeBtn=document.getElementById('theme');
+function setTheme(t){root.dataset.theme=t;themeBtn.textContent=t==='dark'?'☀️':'🌙';try{localStorage.setItem('theme',t)}catch(e){}}
+let saved=null;try{saved=localStorage.getItem('theme')}catch(e){}
+setTheme(saved||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+themeBtn.onclick=()=>setTheme(root.dataset.theme==='dark'?'light':'dark');
+
+// 2. Mobile menu + active link highlight
+const links=document.getElementById('links');
+document.getElementById('menuBtn').onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+const secs=[...document.querySelectorAll('header[id],section[id]')];
+const navA=[...links.querySelectorAll('a')];
+addEventListener('scroll',()=>{
+  let cur=secs[0].id;secs.forEach(s=>{if(scrollY+120>=s.offsetTop)cur=s.id});
+  navA.forEach(a=>a.classList.toggle('active',a.hash==='#'+cur));
+});
+
+// 3. Typing effect for the role line
+const roles=['Web Developer','Computer Science Student','Problem Solver'];
+let ri=0,ci=0,del=false;const roleEl=document.getElementById('role');
+(function type(){
+  const w=roles[ri];roleEl.textContent=w.slice(0,ci);
+  if(!del&&ci===w.length){del=true;return setTimeout(type,1400)}
+  if(del&&ci===0){del=false;ri=(ri+1)%roles.length}
+  ci+=del?-1:1;setTimeout(type,del?40:80);
+})();
+
+// 4. Skill bars animate when visible
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%'}}),{threshold:.4});
+document.querySelectorAll('.fill').forEach(f=>io.observe(f));
+
+// 5. Contact form validation
+const form=document.getElementById('form');
+function check(el,msg,ok){el.nextElementSibling.textContent=ok?'':msg;return ok}
+form.onsubmit=ev=>{
+  ev.preventDefault();
+  const [n,e,m]=['n','e','m'].map(id=>document.getElementById(id));
+  const a=check(n,'Enter your name (at least 2 letters).',n.value.trim().length>=2);
+  const b=check(e,'Enter a valid email, like name@example.com.',/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e.value.trim()));
+  const c=check(m,'Write a message of at least 10 characters.',m.value.trim().length>=10);
+  const ok=document.getElementById('ok');
+  if(a&&b&&c){form.reset();ok.style.display='block';setTimeout(()=>ok.style.display='none',5000)}else ok.style.display='none';
+};
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
